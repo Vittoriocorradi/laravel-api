@@ -26,3 +26,4 @@ Route::get('projects/{slug}', [ProjectController::class, 'show']);
 
 // Type routes
 Route::get('types', [TypeController::class, 'index']);
+Route::get('types/{slug}', [TypeController::class, 'show']);
