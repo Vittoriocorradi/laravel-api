@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TechnologyController;
 use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,7 @@ Route::get('projects/{slug}', [ProjectController::class, 'show']);
 // Type routes
 Route::get('types', [TypeController::class, 'index']);
 Route::get('types/{slug}', [TypeController::class, 'show']);
+
+// Technology routes
+Route::get('technologies', [TechnologyController::class, 'index']);
+Route::get('technologies/{slug}', [TechnologyController::class, 'show']);
