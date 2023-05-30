@@ -29,6 +29,29 @@
                     </ul>
                 </td>
             </tr>
+
+            {{-- Modale per cancellazione --}}
+            <div class="modal fade" id="contact-{{ $contact->id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete message from {{ $contact->name }}</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Warning! You're about to delete a contact. Do you wish to proceed?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                            <form action="{{ route('admin.contacts.destroy', $contact) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Confirm" class="btn btn-danger p-2">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @endforeach
         </tbody>
 </div>
