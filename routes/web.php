@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TypeController;
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'verified'])
         //     ->name('dashboard');
         Route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']);
         Route::resource('types', TypeController::class)->parameters(['types'=>'type:slug']);
+        Route::resource('contacts', ContactController::class)->parameters(['contacts'=>'contact:id']);
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
