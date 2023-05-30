@@ -16,8 +16,12 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    <a href="{{ route('admin.projects.index') }}" class="btn btn-success">My projects</a>
+                    <div>
+                        <a href="{{ route('admin.projects.index') }}" class="btn btn-success mb-3">My projects</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('admin.contacts.index') }}" class="btn btn-success">My contacts</a>
+                    </div>
                     {{-- {{ __('You are logged in!') }} --}}
                 </div>
             </div>
